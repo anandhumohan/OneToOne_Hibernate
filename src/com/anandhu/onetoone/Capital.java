@@ -15,6 +15,10 @@ public class Capital {
 	@Column(name = "Capital_Population")
 	private long capitalPopulation;
 
+	public Capital() {
+
+	}
+
 	public String getCapitalName() {
 		return capitalName;
 	}

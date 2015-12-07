@@ -3,6 +3,7 @@ package com.anandhu.onetoone;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.classic.Session;
 
@@ -10,7 +11,7 @@ public class OneToOneMain {
 
 	public static void main(String[] args) {
 
-		Configuration configuration = new Configuration();
+		AnnotationConfiguration configuration = new AnnotationConfiguration();
 		configuration.configure("Hiberante.cfg.xml");
 		SessionFactory factory = configuration.buildSessionFactory();
 		Session session = factory.openSession();
@@ -18,6 +19,7 @@ public class OneToOneMain {
 		Country country1 = new Country();
 		country1.setCountryName("india");
 		country1.setPopulation(1000);
+		
 		Capital capital1 = new Capital();
 		capital1.setCapitalName("delhi");
 		capital1.setCapitalPopulation(500);
@@ -33,7 +35,7 @@ public class OneToOneMain {
 
 		Transaction transaction = session.beginTransaction();
 		session.save(country1);
-		session.save(capital2);
+		session.save(capital1);
 		session.save(country2);
 		session.save(capital2);
 		System.out.println("updated");

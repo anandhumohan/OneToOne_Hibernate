@@ -1,6 +1,7 @@
 package com.anandhu.onetoone;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -21,6 +22,10 @@ public class Country {
 	@OneToOne
 	@JoinColumn(name = "Capital_Name")
 	Capital capital;
+
+	public Country() {
+
+	}
 
 	public void setCountryName(String countryName) {
 		this.countryName = countryName;
